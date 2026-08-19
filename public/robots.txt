@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://jemadigital.netlify.app/sitemap.xml
