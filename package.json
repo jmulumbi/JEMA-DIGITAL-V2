@@ -15,7 +15,7 @@
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
     "react-router-dom": "^7.18.2",
-    "react-helmet-async": "^2.2.0"
+    "react-helmet-async": "^2.0.5"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.3.3",
