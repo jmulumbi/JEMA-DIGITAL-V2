@@ -2,7 +2,6 @@ import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { motion, MotionConfig } from 'motion/react';
 import { Routes, Route, Link, useLocation } from 'react-router-dom';
 import useDocumentMeta from './hooks/useDocumentMeta';
-import ScrollToTop from './components/ScrollToTop';
 import {
   Menu,
   X,
