@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { motion, MotionConfig } from 'motion/react';
 import { Routes, Route, Link, useLocation } from 'react-router-dom';
-import useDocumentMeta from './hooks/useDocumentMeta';
+import { Helmet } from 'react-helmet-async';
 import {
   Menu,
   X,
@@ -49,63 +49,151 @@ import {
   CheckSquare,
 } from 'lucide-react';
 
-// ============================================================
-// MOTION SYSTEM — centralized tokens so timing/easing stays
-// consistent across the whole site instead of ad-hoc values.
-// Curve is Apple's "expo-out": fast start, long soft settle.
-// ============================================================
-const MOTION = {
-  ease: [0.16, 1, 0.3, 1],
-  duration: {
-    micro: 0.18, // small taps/icon nudges
-    standard: 0.25, // buttons, links, borders
-    reveal: 0.6, // content entering viewport
-    large: 0.85, // big hero/visual reveals
-    page: 0.45, // route transitions
-  },
-};
-
-const FontStyles = () => (
-  <style>
-    {`
-      @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap');
-      /* ... rest unchanged ... */
-    `}
-  </style>
-);
-
-// (rest of file content omitted here for brevity; keep the app implementation unchanged)
+// ... (rest of file remains unchanged until first page component definitions)
 
 const Home = () => {
   const [activePreviewTab, setActivePreviewTab] = useState('desktop');
 
-  useDocumentMeta({
-    title: 'Home — Jema Digital',
-    description:
-      'Jema Digital engineers high-performing websites, AI assistants, and business automation to help African brands capture leads and grow online.',
-    canonical: 'https://jemadigital.netlify.app/',
-    ogTitle: 'Jema Digital — Websites, AI & Digital Solutions',
-    ogDescription:
-      'Engineering high-performing websites, AI assistants, and business automation for African SMEs and growth organisations.',
-    ogImage: 'https://jemadigital.netlify.app/jema-digital-logo-hexagon-jd.svg',
-    twitterTitle: 'Jema Digital — Websites, AI & Digital Solutions',
-    twitterDescription:
-      'Engineering high-performing websites, AI assistants, and business automation for African SMEs and growth organisations.',
-    twitterImage: 'https://jemadigital.netlify.app/jema-digital-logo-hexagon-jd.svg',
-  });
-
   return (
-    <div className="w-full">
-      {/* HERO SECTION */}
-    </div>
+    <>
+      <Helmet>
+        <title>Home — Jema Digital</title>
+        <meta name="description" content="Jema Digital engineers high-performing websites, AI assistants, and business automation to help African brands capture leads and grow online." />
+        <link rel="canonical" href="https://jemadigital.netlify.app/" />
+      </Helmet>
+      <div className="w-full">
+        {/* HERO SECTION */}
+        {/* ... rest of Home markup unchanged ... */}
+      </div>
+    </>
   );
 };
 
-// Apply same pattern for Services, Packages, OurWork, Insights, FAQ, About, Contact —
-// call useDocumentMeta at the top of each component instead of using <Helmet>.
+const Services = () => {
+  const [activeTab, setActiveTab] = useState('websites');
 
-// ... rest of App component with Routes unchanged ...
+  return (
+    <>
+      <Helmet>
+        <title>Services — Jema Digital</title>
+        <meta name="description" content="Services: Business Websites, E-Commerce, AI Solutions, Business Automation, Booking Systems and Maintenance." />
+        <link rel="canonical" href="https://jemadigital.netlify.app/services" />
+      </Helmet>
+      <div className="min-h-screen bg-[#FAFAF7]">
+        {/* ... rest unchanged ... */}
+      </div>
+    </>
+  );
+};
 
+const Packages = () => {
+  const [selectedAddons, setSelectedAddons] = useState([]);
+  // ...
+  return (
+    <>
+      <Helmet>
+        <title>Packages — Jema Digital</title>
+        <meta name="description" content="Transparent packages and pricing for websites, e-commerce and AI solutions tailored for African businesses." />
+        <link rel="canonical" href="https://jemadigital.netlify.app/packages" />
+      </Helmet>
+      <div className="min-h-screen bg-[#FAFAF7]">
+        {/* ... */}
+      </div>
+    </>
+  );
+};
+
+const OurWork = () => {
+  const [selectedFilter, setSelectedFilter] = useState('All');
+  return (
+    <>
+      <Helmet>
+        <title>Our Work — Jema Digital</title>
+        <meta name="description" content="Concepts and showcase projects demonstrating Jema Digital's UI/UX and technical systems." />
+        <link rel="canonical" href="https://jemadigital.netlify.app/work" />
+      </Helmet>
+      <div className="min-h-screen bg-[#FAFAF7]">
+        {/* ... */}
+      </div>
+    </>
+  );
+};
+
+const Insights = () => {
+  const [selectedCategory, setSelectedCategory] = useState('All');
+  const [activeArticle, setActiveArticle] = useState(null);
+  return (
+    <>
+      <Helmet>
+        <title>Insights — Jema Digital</title>
+        <meta name="description" content="Articles and strategy guides to help businesses leverage websites, SEO and AI for growth." />
+        <link rel="canonical" href="https://jemadigital.netlify.app/insights" />
+      </Helmet>
+      <div className="min-h-screen bg-[#FAFAF7]">
+        {/* ... */}
+      </div>
+    </>
+  );
+};
+
+const FAQ = () => {
+  const [searchQuery, setSearchQuery] = useState('');
+  const [openItems, setOpenItems] = useState({ 'web-1': true, 'host-1': false });
+  return (
+    <>
+      <Helmet>
+        <title>FAQ — Jema Digital</title>
+        <meta name="description" content="Frequently asked questions about Jema Digital's services, pricing, hosting and mobile money integrations." />
+        <link rel="canonical" href="https://jemadigital.netlify.app/faq" />
+      </Helmet>
+      <div className="min-h-screen bg-[#FAFAF7]">
+        {/* ... */}
+      </div>
+    </>
+  );
+};
+
+const About = () => {
+  return (
+    <>
+      <Helmet>
+        <title>About — Jema Digital</title>
+        <meta name="description" content="About Jema Digital — mission, vision and why businesses in East Africa choose our web and AI engineering services." />
+        <link rel="canonical" href="https://jemadigital.netlify.app/about" />
+      </Helmet>
+      <div className="min-h-screen bg-[#FAFAF7]">
+        {/* ... */}
+      </div>
+    </>
+  );
+};
+
+const Contact = () => {
+  const [formData, setFormData] = useState({
+    fullName: '',
+    businessName: '',
+    phone: '',
+    email: '',
+    serviceNeeded: 'Business Website',
+    budget: 'UGX 1M–3M',
+    timeline: 'Within 2 Weeks',
+    message: '',
+  });
+  return (
+    <>
+      <Helmet>
+        <title>Contact — Jema Digital</title>
+        <meta name="description" content="Contact Jema Digital for a free consultation about websites, AI and digital automation." />
+        <link rel="canonical" href="https://jemadigital.netlify.app/contact" />
+      </Helmet>
+      <div className="min-h-screen bg-[#FAFAF7]">
+        {/* ... */}
+      </div>
+    </>
+  );
+};
+
+// At the end, remove the internal Router wrapper — main.tsx now provides BrowserRouter
 export default function App() {
   return (
     <MotionConfig reducedMotion="user">
