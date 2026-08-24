@@ -868,6 +868,10 @@ const Footer = () => {
 };
 
 const Home = () => {
+    useDocumentMeta(
+    'Jema Digital | Websites, AI Assistants & Automation for African Brands',
+    'Jema Digital builds high-converting websites, e-commerce stores, AI chatbots, and business automation for growing SMEs across Uganda and East Africa.'
+  );
   const [activePreviewTab, setActivePreviewTab] = useState('desktop');
 
   return (
@@ -1348,6 +1352,10 @@ const Home = () => {
 };
 
 const Services = () => {
+    useDocumentMeta(
+    'Our Services | Websites, E-Commerce, AI & Automation — Jema Digital',
+    'Explore Jema Digital\'s services: business websites, e-commerce with mobile money, custom AI assistants, workflow automation, booking systems, and website maintenance.'
+  );
   const [activeTab, setActiveTab] = useState('websites');
 
   const servicesList = [
@@ -1588,6 +1596,10 @@ const Services = () => {
 };
 
 const Packages = () => {
+    useDocumentMeta(
+    'Pricing & Packages | Jema Digital',
+    'Compare Jema Digital\'s website, e-commerce, and AI packages, with optional add-ons like mobile money integration, custom AI training, and online booking.'
+  );
   const [selectedAddons, setSelectedAddons] = useState([]);
 
   const addonList = [
@@ -1841,6 +1853,10 @@ const Packages = () => {
 };
 
 const OurWork = () => {
+    useDocumentMeta(
+    'Our Work | Jema Digital Portfolio & Case Studies',
+    'See concept projects and case studies from Jema Digital, showcasing UI/UX quality, mobile performance, and technical solutions for real businesses.'
+  );
   const [selectedFilter, setSelectedFilter] = useState('All');
 
   const workItems = [
@@ -1946,6 +1962,10 @@ const OurWork = () => {
 };
 
 const Insights = () => {
+    useDocumentMeta(
+    'Insights & Articles | Jema Digital',
+    'Practical articles on websites, AI tools, and technology costs to help African businesses grow, from Jema Digital.'
+  );
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [activeArticle, setActiveArticle] = useState(null);
 
@@ -2162,6 +2182,10 @@ const Insights = () => {
 };
 
 const FAQ = () => {
+  useDocumentMeta(
+    'Frequently Asked Questions | Jema Digital',
+    'Answers to common questions about Jema Digital\'s websites, AI solutions, pricing, and support for businesses in Uganda and East Africa.'
+  );
   const [searchQuery, setSearchQuery] = useState('');
   const [openItems, setOpenItems] = useState({
     'web-1': true,
@@ -2347,6 +2371,10 @@ const FAQ = () => {
 };
 
 const About = () => {
+  useDocumentMeta(
+    'About Us | Jema Digital',
+    'Jema Digital is based in Kampala, Uganda, partnering with growing SMEs and firms across East Africa to build modern websites, AI assistants, and automation.'
+  );
   return (
     <div className="min-h-screen bg-[#FAFAF7]">
       <PageHeader
@@ -2455,6 +2483,10 @@ const About = () => {
 };
 
 const Contact = () => {
+  useDocumentMeta(
+    'Contact Us | Jema Digital',
+    'Get in touch with Jema Digital for a free consultation on your website, e-commerce store, AI assistant, or automation project.'
+  );
   const [formData, setFormData] = useState({
     fullName: '',
     businessName: '',
