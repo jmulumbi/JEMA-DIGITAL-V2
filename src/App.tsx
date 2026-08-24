@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { motion, MotionConfig } from 'motion/react';
+import { useDocumentMeta } from './hooks/useDocumentMeta';
 import {
   BrowserRouter as Router,
   Routes,
